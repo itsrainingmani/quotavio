@@ -8,12 +8,18 @@
 
 html,
 body {
-  @apply bg-gray-50 dark:bg-gray-900;
+	@apply bg-gray-200 bg-fixed bg-no-repeat bg-right-bottom bg-contain bg-opacity-40;
+	background-image: url('/vision.png');
 }
 
 /* Write your own custom component styles here */
 .btn-blue {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+	@apply px-4 py-2 font-bold text-white bg-blue-500 rounded shadow active:bg-blue-800;
+}
+
+.shadow-txt {
+	@apply font-mono text-3xl text-center text-black;
+	text-shadow: rgb(32, 245, 96) 1px 2px 0px;
 }
 
 /* Start purging... */
@@ -21,3 +27,20 @@ body {
 /* Stop purging. */
 
 /* Your own custom utilities */
+@responsive {
+	.text-shadow {
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.text-shadow-md {
+		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+	}
+
+	.text-shadow-lg {
+		text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+	}
+
+	.text-shadow-none {
+		text-shadow: none;
+	}
+}

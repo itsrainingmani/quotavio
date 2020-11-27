@@ -1,14 +1,21 @@
-import Nav from '../components/nav'
+import Head from 'next/head';
+import Nav from '@components/Nav';
+import Footer from '@components/Footer';
+import SearchBar from '@components/Search';
 
 export default function IndexPage() {
-  return (
-    <div>
-      <Nav />
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
-      </div>
-    </div>
-  )
+	return (
+		<div>
+			<Head>
+				<title>Quotavio! Search for Quotes</title>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+			<Nav />
+			<main className='py-20 text-center'>
+				<h1 className='shadow-txt'>Search for a fun quote</h1>
+				<SearchBar />
+			</main>
+			<Footer />
+		</div>
+	);
 }
