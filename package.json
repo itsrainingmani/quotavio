@@ -8,9 +8,14 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "next start"
+		"start": "next start",
+		"analyze": "cross-env ANALYZE=true next build",
+		"analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+		"analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
 	},
 	"dependencies": {
+		"@next/bundle-analyzer": "^10.0.3",
+		"cross-env": "^7.0.3",
 		"fuse.js": "^6.4.3",
 		"next": "latest",
 		"react": "^17.0.1",
