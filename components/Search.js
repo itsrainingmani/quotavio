@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Fuse from "fuse.js";
+import Fuse from "fuse.js/dist/fuse.basic";
 
 export default function SearchComponent({ data }) {
 	const tags = [
