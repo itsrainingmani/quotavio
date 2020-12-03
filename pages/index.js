@@ -15,7 +15,7 @@ export default function IndexPage() {
 				console.log("Data is good");
 				let data = await response.json();
 				let authorsAndTags = data.authors.concat(data.tags);
-				console.log(authorsAndTags);
+				setTypeahead(authorsAndTags);
 			}
 		})();
 	}, []);
