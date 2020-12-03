@@ -8,8 +8,8 @@
 
 html,
 body {
-	@apply bg-gray-200 bg-fixed bg-no-repeat bg-right-bottom bg-contain bg-opacity-40;
-	background-image: url('/vision.png');
+	@apply bg-fixed bg-no-repeat bg-right-bottom bg-contain bg-opacity-40;
+	background-image: url("/vision.png");
 }
 
 /* Write your own custom component styles here */
