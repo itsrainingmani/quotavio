@@ -36,14 +36,16 @@ export default function SearchComponent({ data }) {
 	};
 
 	return (
-		<div className="flex flex-col text-center items-center">
-			<input
-				type="text"
-				className="box-content mx-10 mt-10 h-8 w-96 p-2 rounded-lg shadow-lg text-xl text-center italic text-gray-600 bg-purple-50"
-				placeholder={placeholder.join(", ")}
-				onChange={handleTextChange}
-				maxLength={20}
-			></input>
+		<div className="flex flex-col text-center items-center mx-auto">
+			<div className="flex">
+				<input
+					type="text"
+					className="box-content h-8 w-96 p-2 border border-gray-300 rounded-md shadow text-xl text-center bg-white"
+					placeholder={placeholder.join(", ")}
+					onChange={handleTextChange}
+					maxLength={20}
+				></input>
+			</div>
 			<SearchResults data={results} />
 		</div>
 	);
@@ -61,7 +63,7 @@ function SearchResults({ data }) {
 	if (resultList.length > 0) {
 		return (
 			<div>
-				<div className="box-content m-2 w-96 p-2 rounded-lg text-xl text-gray-600 bg-purple-50 text-justify">
+				<div className="box-content w-96 p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
 					{resultList.map((r) => (
 						<div className="box-content m-1 px-2 py-1 border flex justify-between">
 							<span>{r.item.name}</span>
