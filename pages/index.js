@@ -27,8 +27,8 @@ export default function IndexPage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Nav />
-			<main className="py-20 text-center">
-				<h1 className="shadow-txt">Search for a fun quote</h1>
+			<main className="text-center max-w-3xl mx-auto pt-20">
+				<h1 className="shadow-txt text-5xl pb-4">Search for a fun quote</h1>
 				<SearchComponent data={typeahead} />
 			</main>
 			<Footer />
