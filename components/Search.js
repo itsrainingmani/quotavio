@@ -40,7 +40,7 @@ export default function SearchComponent({ data }) {
 			<div className="flex">
 				<input
 					type="text"
-					className="box-content h-8 w-96 p-2 border border-gray-300 rounded-md shadow text-xl text-center bg-white"
+					className="box-content h-10 w-96 p-2 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter"
 					placeholder={placeholder.join(", ")}
 					onChange={handleTextChange}
 					maxLength={20}
