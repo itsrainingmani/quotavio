@@ -18,11 +18,6 @@ body {
 	@apply px-4 py-2 font-bold text-white bg-blue-500 rounded shadow active:bg-blue-800;
 }
 
-.shadow-txt {
-	@apply font-mono text-3xl text-center text-black;
-	text-shadow: rgb(32, 245, 96) 1px 2px 0px;
-}
-
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
