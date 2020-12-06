@@ -8,9 +8,22 @@
 
 html,
 body {
-	@apply bg-fixed bg-no-repeat bg-right-bottom bg-opacity-40 h-screen;
+	@apply bg-fixed bg-no-repeat bg-right-bottom bg-opacity-40 h-screen bg-contain;
 	background-image: url("/vision.png");
-	background-size: 60%;
+}
+
+h1 {
+	mix-blend-mode: difference;
+	background: linear-gradient(
+		45deg,
+		#ff5555 -8.25%,
+		#0000ff 2.57%,
+		#00bf66 33.08%,
+		#b0b305 51.57%
+	);
+	color: #000;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /* Write your own custom component styles here */
