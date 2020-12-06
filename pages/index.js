@@ -28,8 +28,8 @@ export default function IndexPage() {
 			</Head>
 			<Nav />
 			<main className="text-center max-w-3xl mx-auto pt-20">
-				<h1 className="font-inter text-5xl pb-4 uppercase tracking-tighter font-bold">
-					Search for a fun quote
+				<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl pb-4 tracking-tighter font-extrabold">
+					Search for a Quote
 				</h1>
 				<SearchComponent data={typeahead} />
 			</main>
