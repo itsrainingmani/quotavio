@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Nav from "@components/Nav";
-import Footer from "@components/Footer";
-import Link from "next/link";
+import Nav from "@components/nav";
+import Footer from "@components/footer";
 
 const siteTitle = "Quotavio! Search for Quotes";
 

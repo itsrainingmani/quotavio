@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "@components/layout";
-import SearchComponent from "@components/Search";
+import SearchComponent from "@components/search";
 import Title from "@components/title";
 import React, { useState, useEffect } from "react";
 
