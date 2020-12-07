@@ -31,6 +31,12 @@ h1 {
 	@apply px-4 py-2 font-bold text-white bg-blue-500 rounded shadow active:bg-blue-800;
 }
 
+/* .br-grad {
+	border: 1px solid;
+	border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66));
+	border-image-slice: 1;
+} */
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
