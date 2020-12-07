@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "@components/layout";
 import SearchComponent from "@components/Search";
+import Title from "@components/title";
 import React, { useState, useEffect } from "react";
 
 export default function IndexPage() {
@@ -25,9 +26,7 @@ export default function IndexPage() {
 				<title>Quotavio! Search for Quotes</title>
 			</Head>
 			<section>
-				<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl pb-4 tracking-tighter font-extrabold">
-					Search for a Quote
-				</h1>
+				<Title text="Search for a Quote" />
 				<SearchComponent data={typeahead} />
 			</section>
 		</Layout>

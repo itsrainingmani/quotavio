@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "@components/layout";
+import Title from "@components/title";
 
 export default function AboutPage() {
 	return (
@@ -8,9 +9,7 @@ export default function AboutPage() {
 				<title>Quotavio! About Page</title>
 			</Head>
 			<section>
-				<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl pb-4 tracking-tighter font-extrabold">
-					About Quotavio
-				</h1>
+				<Title text="About Quotavio" />
 			</section>
 		</Layout>
 	);
