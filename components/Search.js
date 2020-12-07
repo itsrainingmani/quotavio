@@ -61,10 +61,14 @@ function SearchResults({ data }) {
 	if (resultList.length > 0) {
 		return (
 			<div className="box-content w-10/12 md:w-11/12 lg:w-full p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
-				{resultList.map((r) => (
-					<div className="box-content m-1 px-2 py-1 border flex justify-between">
-						<span>{r.item.name}</span>
-						<span>{r.item.count}</span>
+				{resultList.map((r, i) => (
+					<div
+						className={`${
+							resultList.length - 1 === i ? "" : "border-b-2"
+						} box-border p-2 flex justify-between hover:bg-white`}
+					>
+						<span className="font-inter">{r.item.name}</span>
+						<span className="font-inter">{r.item.count}</span>
 					</div>
 				))}
 			</div>
