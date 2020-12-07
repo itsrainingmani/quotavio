@@ -82,12 +82,12 @@ export default function SearchComponent({ data }) {
 				placeholder={placeholder.join(", ")}
 				onChange={handleTextChange}
 			></input>
-			<SearchResults data={results} resultHandler={addResult} />
+			<SearchTermResults data={results} resultHandler={addResult} />
 		</div>
 	);
 }
 
-function SearchResults({ data, resultHandler }) {
+function SearchTermResults({ data, resultHandler }) {
 	const [resultList, setResultList] = useState([]);
 
 	useEffect(() => {
