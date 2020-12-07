@@ -62,7 +62,6 @@ export default function SearchComponent({ data }) {
 				className="box-content h-10 w-10/12 md:w-11/12 lg:w-full p-2 mx-5 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter"
 				placeholder={placeholder.join(", ")}
 				onChange={handleTextChange}
-				maxLength={20}
 			></input>
 			<SearchResults data={results} resultHandler={addResult} />
 		</div>
