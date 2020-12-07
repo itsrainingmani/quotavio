@@ -16,10 +16,10 @@ h1 {
 	mix-blend-mode: difference;
 	background: linear-gradient(
 		45deg,
-		#ff5555 -8.25%,
-		#0000ff 2.57%,
-		#00bf66 33.08%,
-		#b0b305 51.57%
+		#ff5555 8.25%,
+		#0000ff 40.57%,
+		#00bf66 72.08%,
+		#b0b305 90.57%
 	);
 	color: #000;
 	background-clip: text;
