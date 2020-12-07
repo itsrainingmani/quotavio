@@ -81,6 +81,10 @@ function SearchResults({ data, resultHandler }) {
 	if (resultList.length > 0) {
 		return (
 			<div className="box-content w-10/12 md:w-11/12 lg:w-full rounded-lg text-xl text-gray-800 bg-blue-50 text-justify shadow-xl">
+				<div className="box-border flex justify-between px-4 border border-b-2 text-sm text-gray-500 italic">
+					<span className="font-inter">result</span>
+					<span className="font-inter">count</span>
+				</div>
 				{resultList.map((r, i) => (
 					<div
 						key={`${r.item.name}${r.item.count}`}
