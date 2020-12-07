@@ -34,11 +34,6 @@ export default function SearchComponent({ data }) {
 		const { value } = e.currentTarget;
 		let searchvalues = fuse.search(value);
 		setResults(searchvalues.slice(0, 6));
-
-		if (value === "") {
-			console.log("Clear search terms");
-			setSearchTerms([]);
-		}
 	};
 
 	const addResult = async (result) => {
@@ -51,15 +46,39 @@ export default function SearchComponent({ data }) {
 		console.log(searchTerms);
 	};
 
+	const removeResult = async (result) => {
+		if (searchTerms.includes(result)) {
+			setSearchTerms(searchTerms.filter((i) => i !== result));
+		}
+	};
+
 	return (
 		<div className="flex flex-col text-center items-center mx-auto">
 			<label htmlFor="search-terms" className="hidden">
 				search for a quote
 			</label>
+			<div className="flex flex-row w-10/12 md:w-11/12 lg:w-full">
+				{searchTerms.length === 0
+					? null
+					: searchTerms.map((s) => (
+							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md shadow p-2 text-lg bg-blue-400 mr-1">
+								<text className="text-center px-1 border-r-2 border-black">
+									{s}
+								</text>
+								<button
+									onClick={() => {
+										removeResult(s);
+									}}
+								>
+									✖
+								</button>
+							</div>
+					  ))}
+			</div>
 			<input
 				id="search-terms"
 				type="text"
-				className="box-content h-10 w-10/12 md:w-11/12 lg:w-full p-2 mx-5 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter"
+				className="box-content h-10 w-10/12 md:w-11/12 lg:w-full py-2 mx-5 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter mt-2"
 				placeholder={placeholder.join(", ")}
 				onChange={handleTextChange}
 			></input>
