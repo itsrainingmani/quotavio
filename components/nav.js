@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const extLinks = [
-	{ href: "https://github.com/itsrainingmani", label: "GitHub" },
+	{ href: "https://github.com/itsrainingmani/quotavio", label: "GitHub" },
 	// { href: 'https://nextjs.org/docs', label: 'Docs' },
 ];
 
