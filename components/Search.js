@@ -34,6 +34,11 @@ export default function SearchComponent({ data }) {
 		const { value } = e.currentTarget;
 		let searchvalues = fuse.search(value);
 		setResults(searchvalues.slice(0, 6));
+
+		if (value === "") {
+			console.log("Clear search terms");
+			setSearchTerms([]);
+		}
 	};
 
 	const addResult = async (result) => {
@@ -43,6 +48,7 @@ export default function SearchComponent({ data }) {
 		}
 		console.log(`Added ${result} to Search Terms`);
 		setSearchTerms([...searchTerms, result]);
+		console.log(searchTerms);
 	};
 
 	return (
@@ -70,13 +76,13 @@ function SearchResults({ data, resultHandler }) {
 
 	if (resultList.length > 0) {
 		return (
-			<div className="box-content w-10/12 md:w-11/12 lg:w-full p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
+			<div className="box-content w-10/12 md:w-11/12 lg:w-full rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
 				{resultList.map((r, i) => (
 					<div
 						key={`${r.item.name}${r.item.count}`}
 						className={`${
 							resultList.length - 1 === i ? "" : "border-b-2"
-						} box-border p-2 flex justify-between hover:bg-white`}
+						} box-border p-4 flex justify-between hover:bg-white active:bg-green-100 active:shadow-inner`}
 						onClick={() => resultHandler(r.item.name)}
 					>
 						<span className="font-inter">{r.item.name}</span>
