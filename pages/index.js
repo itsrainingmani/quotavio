@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Nav from "@components/Nav";
-import Footer from "@components/Footer";
+import Layout from "@components/layout";
 import SearchComponent from "@components/Search";
 import React, { useState, useEffect } from "react";
 
@@ -21,19 +20,16 @@ export default function IndexPage() {
 	}, []);
 
 	return (
-		<div>
+		<Layout>
 			<Head>
 				<title>Quotavio! Search for Quotes</title>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Nav />
-			<main className="text-center max-w-3xl mx-auto pt-20">
+			<section>
 				<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl pb-4 tracking-tighter font-extrabold">
 					Search for a Quote
 				</h1>
 				<SearchComponent data={typeahead} />
-			</main>
-			<Footer />
-		</div>
+			</section>
+		</Layout>
 	);
 }
