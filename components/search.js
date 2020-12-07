@@ -57,11 +57,11 @@ export default function SearchComponent({ data }) {
 			<label htmlFor="search-terms" className="hidden">
 				search for a quote
 			</label>
-			<div className="flex flex-row w-10/12 md:w-11/12 lg:w-full">
+			<div className="flex flex-row flex-wrap w-10/12 md:w-11/12 lg:w-full">
 				{searchTerms.length === 0
 					? null
 					: searchTerms.map((s) => (
-							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md shadow p-2 text-lg bg-blue-400 mr-1">
+							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md shadow p-2 text-lg border-2 border-blue-500 bg-white bg-opacity-90 mr-1 mb-1">
 								<text className="text-center px-1 border-r-2 border-black">
 									{s}
 								</text>
