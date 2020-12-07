@@ -18,7 +18,7 @@ export default function Nav() {
 					{internalLinks.map(({ href, label }) => (
 						<li key={`${href}${label}`}>
 							<Link href={href}>
-								<a className="text-blue-500 px-4 py-2 rounded hover:shadow no-underline font-inter font-bold italic text-xl hover:bg-gray-200 active:shadow-inner active:bg-gray-300">
+								<a className="text-blue-500 p-2 rounded hover:shadow no-underline font-inter font-bold italic text-xl hover:bg-gray-200 active:shadow-inner active:bg-gray-300">
 									{label}
 								</a>
 							</Link>
