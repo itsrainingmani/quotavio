@@ -6,7 +6,6 @@ function QuoteRight() {
 			focusable="false"
 			data-prefix="fas"
 			data-icon="quote-right"
-			class="svg-inline--fa fa-quote-right fa-w-16"
 			role="img"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 512 512"
@@ -22,12 +21,11 @@ function QuoteRight() {
 function QuoteLeft() {
 	return (
 		<svg
-			className="lg:w-8 md:w-7 w-6 lg:h-8 md:h-7 h-6"
+			className="lg:w-8 md:w-7 w-6 lg:h-8 md:h-7 h-6 self-end"
 			aria-hidden="true"
 			focusable="false"
 			data-prefix="fas"
 			data-icon="quote-left"
-			class="svg-inline--fa fa-quote-left fa-w-16"
 			role="img"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 512 512"
@@ -42,9 +40,9 @@ function QuoteLeft() {
 
 export default function Title({ text }) {
 	return (
-		<div className="flex flex-row justify-center">
+		<div className="flex flex-row justify-center pb-4">
 			<QuoteLeft />
-			<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl pb-4 px-2 tracking-tighter font-extrabold">
+			<h1 className="font-inter lg:text-7xl md:text-5xl text-4xl px-2 tracking-tighter font-extrabold">
 				{text}
 			</h1>
 			<QuoteRight />
