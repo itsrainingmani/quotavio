@@ -61,7 +61,7 @@ export default function SearchComponent({ data }) {
 				{searchTerms.length === 0
 					? null
 					: searchTerms.map((s) => (
-							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md shadow p-2 text-lg border-2 border-blue-500 bg-white bg-opacity-90 mr-1 mb-1">
+							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md p-2 text-lg border-2 border-blue-500 bg-white bg-opacity-90 mr-1 mb-1">
 								<text className="text-center px-1 border-r-2 border-black">
 									{s}
 								</text>
