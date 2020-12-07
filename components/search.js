@@ -61,11 +61,12 @@ export default function SearchComponent({ data }) {
 				{searchTerms.length === 0
 					? null
 					: searchTerms.map((s) => (
-							<div className="font-inter flex flex-row justify-between space-x-1 rounded-md p-2 text-lg border-2 border-blue-500 bg-white bg-opacity-90 mr-1 mb-1">
-								<text className="text-center px-1 border-r-2 border-black">
+							<div className="font-inter flex flex-row justify-between rounded-md text-lg border-2 border-blue-500 bg-white bg-opacity-90 mr-1 mb-1">
+								<text className="text-center p-1 border-r-2 border-blue-400">
 									{s}
 								</text>
 								<button
+									className="p-1 hover:bg-red-500 active:shadow-inner active:bg-red-600"
 									onClick={() => {
 										removeResult(s);
 									}}
@@ -98,7 +99,7 @@ function SearchTermResults({ data, resultHandler }) {
 
 	if (resultList.length > 0) {
 		return (
-			<div className="box-content w-10/12 md:w-11/12 lg:w-full rounded-lg text-xl text-gray-800 bg-blue-50 text-justify shadow-xl">
+			<div className="box-content w-10/12 md:w-11/12 lg:w-full rounded-lg text-xl text-gray-800 bg-gray-50 text-justify shadow-xl">
 				<div className="box-border flex justify-between px-4 border border-b-2 text-sm text-gray-500 italic">
 					<span className="font-inter">result</span>
 					<span className="font-inter">count</span>
@@ -106,9 +107,7 @@ function SearchTermResults({ data, resultHandler }) {
 				{resultList.map((r, i) => (
 					<div
 						key={`${r.item.name}${r.item.count}`}
-						className={`${
-							resultList.length - 1 === i ? "" : "border-b-2"
-						} box-border p-4 flex justify-between hover:bg-white active:bg-green-100 active:shadow-inner`}
+						className="box-border p-4 flex justify-between hover:bg-gray-200 active:bg-green-100 active:shadow-inner"
 						onClick={() => resultHandler(r.item.name)}
 					>
 						<span className="font-inter">{r.item.name}</span>
