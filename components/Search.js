@@ -18,6 +18,7 @@ export default function SearchComponent({ data }) {
 
 	const [placeholder, setPlaceholder] = useState([]);
 	const [results, setResults] = useState([]);
+	const [searchTerms, setSearchTerms] = useState([]);
 
 	// Fuse config
 	const options = { keys: ["name"], minMatchCharLength: 2, shouldSort: true };
@@ -35,6 +36,15 @@ export default function SearchComponent({ data }) {
 		setResults(searchvalues.slice(0, 6));
 	};
 
+	const addResult = async (result) => {
+		if (searchTerms.includes(result)) {
+			console.log("Term is already in Search Terms");
+			return;
+		}
+		console.log(`Added ${result} to Search Terms`);
+		setSearchTerms([...searchTerms, result]);
+	};
+
 	return (
 		<div className="flex flex-col text-center items-center mx-auto">
 			<input
@@ -44,12 +54,12 @@ export default function SearchComponent({ data }) {
 				onChange={handleTextChange}
 				maxLength={20}
 			></input>
-			<SearchResults data={results} />
+			<SearchResults data={results} resultHandler={addResult} />
 		</div>
 	);
 }
 
-function SearchResults({ data }) {
+function SearchResults({ data, resultHandler }) {
 	const [resultList, setResultList] = useState([]);
 
 	useEffect(() => {
@@ -63,9 +73,11 @@ function SearchResults({ data }) {
 			<div className="box-content w-10/12 md:w-11/12 lg:w-full p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
 				{resultList.map((r, i) => (
 					<div
+						key={`${r.item.name}${r.item.count}`}
 						className={`${
 							resultList.length - 1 === i ? "" : "border-b-2"
 						} box-border p-2 flex justify-between hover:bg-white`}
+						onClick={() => resultHandler(r.item.name)}
 					>
 						<span className="font-inter">{r.item.name}</span>
 						<span className="font-inter">{r.item.count}</span>
