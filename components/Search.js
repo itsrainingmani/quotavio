@@ -37,15 +37,13 @@ export default function SearchComponent({ data }) {
 
 	return (
 		<div className="flex flex-col text-center items-center mx-auto">
-			<div className="flex">
-				<input
-					type="text"
-					className="box-content h-10 w-96 p-2 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter"
-					placeholder={placeholder.join(", ")}
-					onChange={handleTextChange}
-					maxLength={20}
-				></input>
-			</div>
+			<input
+				type="text"
+				className="box-content h-10 w-10/12 md:w-11/12 lg:w-full p-2 mx-5 border border-gray-300 rounded-md shadow text-xl text-center bg-white font-inter"
+				placeholder={placeholder.join(", ")}
+				onChange={handleTextChange}
+				maxLength={20}
+			></input>
 			<SearchResults data={results} />
 		</div>
 	);
@@ -62,15 +60,13 @@ function SearchResults({ data }) {
 
 	if (resultList.length > 0) {
 		return (
-			<div>
-				<div className="box-content w-96 p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
-					{resultList.map((r) => (
-						<div className="box-content m-1 px-2 py-1 border flex justify-between">
-							<span>{r.item.name}</span>
-							<span>{r.item.count}</span>
-						</div>
-					))}
-				</div>
+			<div className="box-content w-10/12 md:w-11/12 lg:w-full p-2 rounded-lg text-xl text-gray-600 bg-blue-50 text-justify shadow-xl">
+				{resultList.map((r) => (
+					<div className="box-content m-1 px-2 py-1 border flex justify-between">
+						<span>{r.item.name}</span>
+						<span>{r.item.count}</span>
+					</div>
+				))}
 			</div>
 		);
 	} else {
